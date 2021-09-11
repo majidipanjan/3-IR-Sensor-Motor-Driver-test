@@ -23,22 +23,22 @@ int s1 = digitalRead(IR1);
 int s2 = digitalRead(IR2);
 int s3 = digitalRead(IR3);
 
-if (((s1==1)&&(s2==0)&&(s3==1))||((s1==0)&&(s2==0)&&(s3==0))){
+if (((s1==0)&&(s2==1)&&(s3==0))||((s1==1)&&(s2==1)&&(s3==1))){
   forward();
   Serial.println("Moving Forward");
 }
 
-if (((s1==1)&&(s2==1)&&(s3==0))||((s1==1)&&(s2==0)&&(s3==0))){
+if (((s1==0)&&(s2==0)&&(s3==1))||((s1==0)&&(s2==1)&&(s3==1))){
   right();
   Serial.println("Moving Right");
 }
 
-if (((s1==0)&&(s2==1)&&(s3==1))||((s1==0)&&(s2==0)&&(s3==1))){
+if (((s1==1)&&(s2==0)&&(s3==0))||((s1==1)&&(s2==1)&&(s3==0))){
   left();
   Serial.println("Moving Left");
 }
 
-if ((s1==1)&&(s2==1)&&(s3==1)){
+if ((s1==0)&&(s2==0)&&(s3==0)){
   Stop();
   Serial.println("Robot Stopped");
 }
